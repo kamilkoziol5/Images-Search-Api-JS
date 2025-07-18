@@ -7,8 +7,6 @@ export function generateHTML(images, name) {
 	const noPhotosContainer = document.querySelector('.no-photos-container');
 	const loadBtn = document.querySelector('.load-more');
 
-	
-
 	imagesWrapper.innerHTML += images
 		.map(
 			img =>
@@ -19,7 +17,7 @@ export function generateHTML(images, name) {
 							<i class="bx bx-camera"></i>
 							<span class="photographer-name">${img.photographer}</span>
 						</div>
-						<button onclick="downloadImage('${img.src.large2x}')" class="download-image">
+						<button onclick="downloadImage('${img.src.large2x}');event.stopPropagation()" class="download-image">
 									<img src="images/Download.svg" alt="" />
 
 						</button>
