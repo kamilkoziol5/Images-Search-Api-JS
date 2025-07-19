@@ -20,7 +20,7 @@ export function clearApp() {
 	searchInput.value = '';
 	noPhotosContainerH3.textContent =
 		'Tutaj pojawi się wynik twojego wyszukiwania';
-	noPhotosContainerIMG.src = '../images/MyApril6.webp';
+	noPhotosContainerIMG.src = 'images/MyApril6.webp';
 	alertText.style.display = 'none';
 
 	document.body.classList.remove('height');
