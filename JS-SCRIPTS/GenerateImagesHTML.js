@@ -30,7 +30,7 @@ export function GenerateImagesHTML(images, name) {
 
 	if (imagesWrapper.children.length === 0) {
 		noPhotosContainerH3.textContent = 'Nic nie znaleziono';
-		noPhotosContainerIMG.src = '../images/error-img.jpg';
+		noPhotosContainerIMG.src = 'images/error-img.jpg';
 		noPhotosContainer.classList.remove('hide');
 		loadBtn.classList.remove('shown');
 		return;
