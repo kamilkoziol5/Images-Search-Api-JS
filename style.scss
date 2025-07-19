@@ -113,6 +113,7 @@ body {
 				right: 5px;
 				top: 50%;
 				transform: translateY(-50%);
+				z-index: 9999;
 
 				i {
 					font-size: 1.3rem;
@@ -151,16 +152,17 @@ body {
 			}
 		}
 
-		&:before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: #242424ce;
-			z-index: 0;
-		}
+		// &:before {
+		// 	content: '';
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	background-color: #242424ce;
+		// 	z-index: 0;
+		// 	pointer-events: none;
+		// }
 	}
 
 	// Main Container syles

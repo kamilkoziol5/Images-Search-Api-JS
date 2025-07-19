@@ -105,6 +105,7 @@ body .search-image-container .search-input-wrapper .search-btn {
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 9999;
 }
 body .search-image-container .search-input-wrapper .search-btn i {
   font-size: 1.3rem;
@@ -135,16 +136,6 @@ body .search-image-container .reset-btn img {
 }
 body .search-image-container .reset-btn:hover {
   transform: scale(0.95);
-}
-body .search-image-container:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(36, 36, 36, 0.8078431373);
-  z-index: 0;
 }
 body .display-image-container {
   padding: 2rem;
