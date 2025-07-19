@@ -13,5 +13,5 @@ searchInput.addEventListener('keyup', e => {
 	if (e.key === 'Enter') loadSearchImages();
 });
 
-searchBtn.addEventListener('pointerdown', loadSearchImages);
-resetBtn.addEventListener('pointerdown', clearApp);
+searchBtn.addEventListener('click', loadSearchImages);
+resetBtn.addEventListener('click', clearApp);
