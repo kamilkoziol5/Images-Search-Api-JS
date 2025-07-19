@@ -1,4 +1,4 @@
-import { generateHTML } from './generateImages.js';
+import { GenerateImagesHTML } from './GenerateImagesHTML.js';
 
 const loadBtn = document.querySelector('.load-more');
 
@@ -16,7 +16,7 @@ export async function getImages(apiUrl, searchValue) {
 		}
 
 		const data = await response.json();
-		generateHTML(data.photos, searchValue);
+		GenerateImagesHTML(data.photos, searchValue);
 		loadBtn.innerText = 'Load More';
 		loadBtn.classList.remove('disabled');
 	} catch (err) {

@@ -1,10 +1,12 @@
-import { downloadImage } from './donwloadImage.js';
-import { createLightbox } from './createLightbox.js';
+import { downloadImage } from './DownloadImage.js';
+import { createLightbox } from './CreateLightbox.js';
 
-export function generateHTML(images, name) {
+export function GenerateImagesHTML(images, name) {
 	const imagesCtn = document.querySelector('.display-image-container');
 	const imagesWrapper = document.querySelector('.display-image-wrapper');
 	const noPhotosContainer = document.querySelector('.no-photos-container');
+	const noPhotosContainerH3 = noPhotosContainer.querySelector('h3');
+	const noPhotosContainerIMG = noPhotosContainer.querySelector('img');
 	const loadBtn = document.querySelector('.load-more');
 
 	imagesWrapper.innerHTML += images
@@ -26,13 +28,23 @@ export function generateHTML(images, name) {
 		)
 		.join('');
 
+	if (imagesWrapper.children.length === 0) {
+		noPhotosContainerH3.textContent = 'Nic nie znaleziono';
+		noPhotosContainerIMG.src = '../images/error-img.jpg';
+		noPhotosContainer.classList.remove('hide');
+		loadBtn.classList.remove('shown');
+		return;
+	}
+
 	const existingH5 = imagesCtn.querySelector('.display-image-text');
 	if (!existingH5) {
 		const h5 = document.createElement('h5');
 		h5.innerHTML = `
 						Wyniki wyszukiwania dla
+						<div class="display-image-text-wrapper">
 						<span class="display-image-text-span">${name}</span>
 						<img src="images/down-arrow.png" alt="" />
+						</div>
 						
 						`;
 
@@ -42,4 +54,5 @@ export function generateHTML(images, name) {
 
 	noPhotosContainer.classList.add('hide');
 	loadBtn.classList.add('shown');
+	document.body.classList.add('height');
 }

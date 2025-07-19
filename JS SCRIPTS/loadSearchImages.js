@@ -1,6 +1,6 @@
-import { getImages } from './getImages.js';
+import { getImages } from './GetImages.js';
 import { perPage, currentPage, setCurrentQuery } from './state.js';
-import { showSearchAlert } from './showSearchAlert.js';
+import { showSearchAlert } from './ShowSearchAlert.js';
 
 export function loadSearchImages() {
 	const searchInput = document.querySelector('#search-input');
