@@ -7,7 +7,7 @@ export function loadSearchImages() {
 	const searchValue = searchInput.value.trim();
 
 	if (!searchValue) {
-		showSearchAlert();
+		showSearchAlert('Type something to explore!');
 	}
 
 	const wrapper = document.querySelector('.display-image-wrapper');

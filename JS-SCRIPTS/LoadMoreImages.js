@@ -1,4 +1,4 @@
-import { getImages } from './GetImages.js';
+import  getImages  from './GetImages.js';
 import { incrementPage, currentPage, perPage, currentQuery } from './state.js';
 
 export function loadMoreImages() {

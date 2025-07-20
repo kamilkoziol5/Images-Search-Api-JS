@@ -16,7 +16,10 @@ export function createLightbox(name, src) {
           <button data-option='${src}' class="download-btn">
         <img src="images/Download2.svg" alt="" />
           </button>
-          <button class="close-lightbox-btn">
+          <button class="resize-image-btn">
+            <img src="images/Delete.svg" alt="" />
+          </button>
+		  <button class="close-lightbox-btn">
             <img src="images/Delete.svg" alt="" />
           </button>
         </div>

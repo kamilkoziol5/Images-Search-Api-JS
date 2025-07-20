@@ -6,7 +6,7 @@ export function clearApp() {
 	const searchInput = document.querySelector('#search-input');
 	const noPhotosContainerH3 = noPhotosContainer.querySelector('h3');
 	const noPhotosContainerIMG = noPhotosContainer.querySelector('img');
-	const alertText = document.querySelector('.error-message');
+	const errorSpan = document.querySelector('.error-message');
 
 	if (displayImageText) displayImageText.remove();
 
@@ -15,6 +15,11 @@ export function clearApp() {
 	if (searchInput.classList.contains('error'))
 		searchInput.classList.remove('error');
 
+	if (errorSpan) {
+		errorSpan.style.display = 'none';
+		errorSpan.textContent = '';
+	}
+
 	noPhotosContainer.classList.remove('hide');
 	loadBtn.classList.remove('shown');
 	searchInput.value = '';
@@ -22,8 +27,6 @@ export function clearApp() {
 	noPhotosContainerIMG.alt =
 		'Illustration of two characters and a screen with a search icon';
 	noPhotosContainerIMG.src = 'images/MyApril6.webp';
-	alertText.style.display = 'none';
-
 	document.body.classList.remove('height');
 }
 

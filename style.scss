@@ -91,12 +91,11 @@ body {
 			.error-message {
 				color: $alertColor;
 				position: absolute;
-				top: -25px;
+				top: -22px;
 				left: 0;
-				font-size: 1rem;
+				font-size: 0.85rem;
 				font-weight: 300;
 				pointer-events: none;
-				display: none;
 			}
 
 			.clear-input-btn,
@@ -232,15 +231,19 @@ body {
 		// Display Image Wrapper Styles
 		.display-image-wrapper {
 			list-style: none;
-			column-count: 4;
-			column-gap: 1rem;
+
+			.grid-item {
+				width: calc(25% - 1rem);
+				margin-bottom: 1rem;
+				float: left;
+				box-sizing: border-box;
+			}
 
 			.card {
 				position: relative;
 				cursor: pointer;
 				overflow: hidden;
 				z-index: 999;
-				margin-bottom: 1rem;
 
 				img {
 					width: 100%;
@@ -475,7 +478,9 @@ body {
 @media (max-width: 1150px) {
 	body {
 		.display-image-container .display-image-wrapper {
-			column-count: 3;
+			.grid-item {
+				width: calc(33.333% - 16px);
+			}
 
 			.card .details {
 				padding: 10px;
@@ -516,8 +521,6 @@ body {
 			padding: 1rem;
 
 			.display-image-wrapper {
-				column-count: 3;
-
 				.card .details {
 					opacity: 1;
 					transform: translateX(-50%) scale(1);
@@ -544,7 +547,9 @@ body {
 
 @media (max-width: 750px) {
 	body .display-image-container .display-image-wrapper {
-		column-count: 2;
+		.grid-item {
+			width: calc(50% - 16px);
+		}
 	}
 
 	body .search-image-container .search-input-wrapper {
@@ -561,6 +566,10 @@ body {
 }
 @media (max-width: 650px) {
 	body {
+		.search-image-container .search-input-wrapper .error-message {
+			font-size: 0.8rem;
+			top: -20px;
+		}
 		.display-image-container {
 			h5 {
 				font-size: 0.9rem;
@@ -573,9 +582,6 @@ body {
 				max-width: 200px;
 			}
 		}
-		.display-image-wrapper {
-			column-count: 2;
-		}
 	}
 }
 
@@ -585,7 +591,9 @@ body {
 			line-height: 100%;
 		}
 		.display-image-container .display-image-wrapper {
-			column-count: 1;
+			.grid-item {
+				width: 100%;
+			}
 		}
 
 		.lightbox-container {
