@@ -1,5 +1,5 @@
-import { downloadImage } from './DownloadImage.js';
-import { createLightbox } from './CreateLightbox.js';
+import downloadImage from './DownloadImage.js';
+import createLightbox from './CreateLightbox.js';
 
 export function GenerateImagesHTML(images, name) {
 	const imagesCtn = document.querySelector('.display-image-container');
@@ -13,7 +13,7 @@ export function GenerateImagesHTML(images, name) {
 		.map(
 			img =>
 				`<li onclick="createLightbox('${img.photographer}', '${img.src.large2x}')" class="card">
-					<img src="${img.src.large2x}" alt="" />
+					<img src="${img.src.large2x}" alt="image-gallery-result" />
 					<div class="details">
 						<div class="photographer">
 							<i class="bx bx-camera"></i>
@@ -29,10 +29,19 @@ export function GenerateImagesHTML(images, name) {
 		.join('');
 
 	if (imagesWrapper.children.length === 0) {
-		noPhotosContainerH3.textContent = 'Nic nie znaleziono';
-		noPhotosContainerIMG.src = 'images/error-img.jpg';
+		const searchInput = document.querySelector('#search-input');
+		const searchBtn = document.querySelector('.search-btn');
+		const alertText = document.querySelector('.error-message');
+
+		noPhotosContainerH3.textContent = 'No results found';
+		noPhotosContainerIMG.src = 'images/error-img.webp';
+		noPhotosContainerIMG.alt = 'Illustration showing no search results';
 		noPhotosContainer.classList.remove('hide');
 		loadBtn.classList.remove('shown');
+		searchInput.classList.add('error');
+		searchBtn.classList.add('error');
+		alertText.textContent = 'The entered phrase could not be found.';
+		alertText.style.display = 'block';
 		return;
 	}
 
@@ -43,7 +52,6 @@ export function GenerateImagesHTML(images, name) {
 						Wyniki wyszukiwania dla
 						<div class="display-image-text-wrapper">
 						<span class="display-image-text-span">${name}</span>
-						<img src="images/down-arrow.png" alt="" />
 						</div>
 						
 						`;
@@ -56,3 +64,5 @@ export function GenerateImagesHTML(images, name) {
 	loadBtn.classList.add('shown');
 	document.body.classList.add('height');
 }
+
+export default GenerateImagesHTML;

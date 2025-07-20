@@ -77,7 +77,7 @@ body {
 				}
 
 				&.error {
-					color: $lighDark;
+					color: white;
 					border: 1px solid $alertColor;
 				}
 
@@ -99,6 +99,7 @@ body {
 				display: none;
 			}
 
+			.clear-input-btn,
 			.search-btn {
 				display: flex;
 				align-items: center;
@@ -123,6 +124,14 @@ body {
 
 				&:hover i {
 					color: $whiteColor;
+				}
+			}
+
+			.clear-input-btn {
+				right: 30px;
+
+				i {
+					font-size: 1.5rem;
 				}
 			}
 		}
@@ -189,10 +198,6 @@ body {
 					padding: 5px;
 					background-color: $lighDark;
 					color: $textColor;
-				}
-				img {
-					width: 40px;
-					cursor: pointer;
 				}
 			}
 		}
@@ -512,6 +517,13 @@ body {
 
 			.display-image-wrapper {
 				column-count: 3;
+
+				.card .details {
+					opacity: 1;
+					transform: translateX(-50%) scale(1);
+					visibility: visible;
+					pointer-events: auto;
+				}
 			}
 		}
 
@@ -534,6 +546,18 @@ body {
 	body .display-image-container .display-image-wrapper {
 		column-count: 2;
 	}
+
+	body .search-image-container .search-input-wrapper {
+		input {
+			padding: 7px 15px;
+			font-size: 0.9rem;
+		}
+
+		.clear-input-btn i,
+		.search-btn i {
+			font-size: 1.1rem;
+		}
+	}
 }
 @media (max-width: 650px) {
 	body {
@@ -543,10 +567,6 @@ body {
 				margin-bottom: 1.5rem;
 				gap: 6px;
 				flex-direction: column;
-
-				.display-image-text-wrapper img {
-					width: 30px;
-				}
 			}
 
 			.no-photos-container img {
@@ -561,6 +581,9 @@ body {
 
 @media (max-width: 550px) {
 	body {
+		.search-image-container h1 {
+			line-height: 100%;
+		}
 		.display-image-container .display-image-wrapper {
 			column-count: 1;
 		}

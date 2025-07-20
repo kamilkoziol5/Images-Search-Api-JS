@@ -1,4 +1,4 @@
-import { downloadImage } from './DownloadImage.js';
+import downloadImage from './DownloadImage.js';
 
 export function createLightbox(name, src) {
 	const body = document.querySelector('body');
@@ -55,3 +55,5 @@ export function createLightbox(name, src) {
 }
 
 window.createLightbox = createLightbox;
+
+export default createLightbox;

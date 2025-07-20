@@ -6,3 +6,5 @@ export function loadMoreImages() {
 	let apiUrl = `https://api.pexels.com/v1/search?query=${currentQuery}&page=${currentPage}&per_page=${perPage}`;
 	getImages(apiUrl);
 }
+
+export default loadMoreImages;

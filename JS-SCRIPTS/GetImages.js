@@ -1,8 +1,7 @@
-import { GenerateImagesHTML } from './GenerateImagesHTML.js';
-
-const loadBtn = document.querySelector('.load-more');
+import GenerateImagesHTML from './GenerateImagesHTML.js';
 
 export async function getImages(apiUrl, searchValue) {
+	const loadBtn = document.querySelector('.load-more');
 	const apiKey = '5UJ9ivFIBBQUzlePedlfD4HpPWxGlJJfm5OSzPkE76jrmU9SqgZU9106';
 	try {
 		loadBtn.innerText = 'Loading';
@@ -23,3 +22,5 @@ export async function getImages(apiUrl, searchValue) {
 		console.error('Wystąpił problem z pobieraniem obrazów:', err);
 	}
 }
+
+export default getImages;

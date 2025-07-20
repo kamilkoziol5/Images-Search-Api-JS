@@ -13,3 +13,5 @@ export async function downloadImage(src) {
 	}
 }
 window.downloadImage = downloadImage;
+
+export default downloadImage;

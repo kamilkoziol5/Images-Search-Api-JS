@@ -1,6 +1,6 @@
-import { getImages } from './GetImages.js';
 import { perPage, currentPage, setCurrentQuery } from './state.js';
-import { showSearchAlert } from './ShowSearchAlert.js';
+import getImages from './GetImages.js';
+import showSearchAlert from './ShowSearchAlert.js';
 
 export function loadSearchImages() {
 	const searchInput = document.querySelector('#search-input');
@@ -20,3 +20,5 @@ export function loadSearchImages() {
 	const apiUrl = `https://api.pexels.com/v1/search?query=${searchValue}&page=${currentPage}&per_page=${perPage}`;
 	getImages(apiUrl, searchValue);
 }
+
+export default loadSearchImages;

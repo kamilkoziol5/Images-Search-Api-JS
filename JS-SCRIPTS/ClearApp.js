@@ -18,10 +18,13 @@ export function clearApp() {
 	noPhotosContainer.classList.remove('hide');
 	loadBtn.classList.remove('shown');
 	searchInput.value = '';
-	noPhotosContainerH3.textContent =
-		'Tutaj pojawi się wynik twojego wyszukiwania';
+	noPhotosContainerH3.textContent = 'Your search result will appear here.';
+	noPhotosContainerIMG.alt =
+		'Illustration of two characters and a screen with a search icon';
 	noPhotosContainerIMG.src = 'images/MyApril6.webp';
 	alertText.style.display = 'none';
 
 	document.body.classList.remove('height');
 }
+
+export default clearApp;

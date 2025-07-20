@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,10 +28,13 @@
 			<p>Search any image you want. Just write the word...</p>
 
 			<div class="search-input-wrapper">
+				<span class="error-message"></span>
 				<input id="search-input" type="text" placeholder="Search images" />
-				<span class="error-message">You must write something!</span>
 				<button class="search-btn" id="search-btn">
 					<i class="bx bx-search-alt"></i>
+				</button>
+				<button class="clear-input-btn" id="search-btn">
+					<i class="bx bx-x"></i>
 				</button>
 			</div>
 		</section>
@@ -39,8 +42,10 @@
 		<!-- Images Section -->
 		<section class="display-image-container">
 			<div class="no-photos-container">
-				<h3>Tutaj pojawi się wynik twojego wyszukiwania</h3>
-				<img src="images/MyApril6.webp" alt="" />
+				<h3>Your search result will appear here.</h3>
+				<img
+					src="images/MyApril6.webp"
+					alt="Illustration of two characters and a screen with a search icon" />
 			</div>
 
 			<ul class="display-image-wrapper"></ul>
