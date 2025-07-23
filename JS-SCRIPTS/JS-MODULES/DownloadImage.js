@@ -1,3 +1,5 @@
+import showDownloadSuccess from './Image-Resizer/showDownloadSuccess.js';
+
 export async function downloadImage(src) {
 	try {
 		const response = await fetch(src);
@@ -7,7 +9,7 @@ export async function downloadImage(src) {
 		a.href = URL.createObjectURL(data);
 		a.download = `photo-${Date.now()}.jpg`;
 		a.click();
-		0;
+		showDownloadSuccess();
 	} catch (err) {
 		console.error(err);
 	}

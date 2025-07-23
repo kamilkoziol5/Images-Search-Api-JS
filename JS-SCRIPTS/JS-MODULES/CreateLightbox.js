@@ -1,4 +1,5 @@
 import downloadImage from './DownloadImage.js';
+import createImageResizer from './Image-Resizer/createImageResizer.js';
 
 export function createLightbox(name, src) {
 	const body = document.querySelector('body');
@@ -17,7 +18,8 @@ export function createLightbox(name, src) {
         <img src="images/Download2.svg" alt="" />
           </button>
           <button class="resize-image-btn">
-            <img src="images/Delete.svg" alt="" />
+          		<img src="images/Scale.svg" alt="">
+
           </button>
 		  <button class="close-lightbox-btn">
             <img src="images/Delete.svg" alt="" />
@@ -31,7 +33,6 @@ export function createLightbox(name, src) {
   `;
 
 	body.appendChild(lightbox);
-	console.log('hrllo');
 
 	setTimeout(() => {
 		lightbox.classList.add('shown');
@@ -55,8 +56,19 @@ export function createLightbox(name, src) {
 		const src = btn.dataset.option;
 		downloadImage(src);
 	});
+
+	lightbox.querySelector('.resize-image-btn').addEventListener('click', () => {
+		const img = new Image();
+		img.src = src;
+
+		img.onload = () => {
+			const width = img.naturalWidth;
+			const height = img.naturalHeight;
+
+			createImageResizer(src, width, height); 
+		};
+	});
 }
 
 window.createLightbox = createLightbox;
-
 export default createLightbox;

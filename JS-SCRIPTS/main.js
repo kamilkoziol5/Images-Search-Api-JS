@@ -1,7 +1,7 @@
-import clearApp from './ClearApp.js';
-import loadMoreImages from './LoadMoreImages.js';
-import loadSearchImages from './LoadSearchImages.js';
-import clearInput from './ClearInput.js';
+import clearApp from './JS-MODULES/ClearApp.js';
+import loadMoreImages from './JS-MODULES/LoadMoreImages.js';
+import loadSearchImages from './JS-MODULES/LoadSearchImages.js';
+import clearInput from './JS-MODULES/ClearInput.js';
 
 const loadMoreBtn = document.querySelector('.load-more');
 const searchInput = document.querySelector('#search-input');

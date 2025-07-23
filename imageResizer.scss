@@ -1,0 +1,166 @@
+@import 'variables';
+
+.container {
+	max-width: 500px;
+	width: 100%;
+	height: 583px;
+	padding: 4rem 2rem;
+	background-color: $textColor;
+	border-radius: 12px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%) scale(0);
+	z-index: 99999;
+	opacity: 0;
+	transition: transform 300ms ease, opacity 300ms ease;
+
+	.upload-box {
+		cursor: pointer;
+		width: 100%;
+		height: 250px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		.close-resize-btn {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 7px;
+			background-color: $darkText;
+			color: $whiteColor;
+			border: none;
+			outline: none;
+			transition: 200ms ease;
+			width: 35px;
+			height: 35px;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+
+			img {
+				width: 17px;
+				height: 17px;
+			}
+
+			&:hover {
+				background-color: $lighDark;
+				transform: scale(0.97);
+			}
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			border-radius: 8px;
+		}
+	}
+
+	.content {
+		.row-sizes {
+			margin-top: 2rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 2rem;
+			margin-bottom: 2rem;
+
+			.column {
+				text-align: start;
+
+				label {
+					font-size: 1.1rem;
+					color: $lighDark;
+				}
+
+				input {
+					width: 100%;
+					margin-top: 5px;
+					padding: 10px;
+					border: 1px solid $strokeColor;
+					outline: none;
+					transition: 300ms ease;
+					color: #222;
+					font-size: 1.1rem;
+					font-weight: 600;
+
+					&:hover,
+					&:focus {
+						border: 1px solid $darkText;
+					}
+				}
+			}
+		}
+
+		.row-checkboxes {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 2rem;
+
+			.column {
+				label {
+					display: flex;
+					align-items: center;
+					gap: 0.7rem;
+					cursor: pointer;
+
+					input {
+						display: none;
+					}
+
+					.checkmark {
+						position: relative;
+						width: 20px;
+						height: 20px;
+						border: 2px solid $strokeColor;
+						border-radius: 4px;
+						transition: all 0.2s;
+					}
+
+					input:checked + .checkmark {
+						background-color: $accentColor;
+						border-color: $accentColor;
+
+						&::after {
+							content: '\2713';
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translateX(-50%) translateY(-50%);
+							color: $whiteColor;
+							font-weight: 900;
+						}
+					}
+				}
+			}
+		}
+
+		.download-btn {
+			cursor: pointer;
+			padding: 10px 20px;
+			background-color: $accentColor;
+			border: none;
+			outline: none;
+			border-radius: 4px;
+			transition: 300ms ease;
+			width: 100%;
+			color: $whiteColor;
+			text-transform: uppercase;
+			font-size: 1.1rem;
+
+			&:hover {
+				background-color: $accentColorHover;
+			}
+		}
+	}
+
+	&.active {
+		transform: translateX(-50%) translateY(-50%) scale(1);
+		opacity: 1;
+	}
+}

@@ -1,0 +1,29 @@
+.success-message {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(200%) scale(0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #ebebeb;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  transition: 200ms ease;
+  z-index: 999999999;
+}
+.success-message h4 {
+  font-size: 1.1rem;
+  color: #121212;
+  font-weight: 400;
+}
+.success-message img {
+  width: 30px;
+}
+.success-message.active {
+  transform: translateX(-50%) translateY(0) scale(1);
+}/*# sourceMappingURL=succesMessage.css.map */

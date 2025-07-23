@@ -1,3 +1,175 @@
+@charset "UTF-8";
+.container {
+  max-width: 500px;
+  width: 100%;
+  height: 583px;
+  padding: 4rem 2rem;
+  background-color: #ebebeb;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0);
+  z-index: 99999;
+  opacity: 0;
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+.container .upload-box {
+  cursor: pointer;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .upload-box .close-resize-btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  background-color: #121212;
+  color: #fff;
+  border: none;
+  outline: none;
+  transition: 200ms ease;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.container .upload-box .close-resize-btn img {
+  width: 17px;
+  height: 17px;
+}
+.container .upload-box .close-resize-btn:hover {
+  background-color: #353535;
+  transform: scale(0.97);
+}
+.container .upload-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.container .content .row-sizes {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.container .content .row-sizes .column {
+  text-align: start;
+}
+.container .content .row-sizes .column label {
+  font-size: 1.1rem;
+  color: #353535;
+}
+.container .content .row-sizes .column input {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #a8a8a8;
+  outline: none;
+  transition: 300ms ease;
+  color: #222;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.container .content .row-sizes .column input:hover, .container .content .row-sizes .column input:focus {
+  border: 1px solid #121212;
+}
+.container .content .row-checkboxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.container .content .row-checkboxes .column label {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+}
+.container .content .row-checkboxes .column label input {
+  display: none;
+}
+.container .content .row-checkboxes .column label .checkmark {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #a8a8a8;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.container .content .row-checkboxes .column label input:checked + .checkmark {
+  background-color: #805dff;
+  border-color: #805dff;
+}
+.container .content .row-checkboxes .column label input:checked + .checkmark::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #fff;
+  font-weight: 900;
+}
+.container .content .download-btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #805dff;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  transition: 300ms ease;
+  width: 100%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+.container .content .download-btn:hover {
+  background-color: #9b80ff;
+}
+.container.active {
+  transform: translateX(-50%) translateY(-50%) scale(1);
+  opacity: 1;
+}
+
+.success-message {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(200%) scale(0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #ebebeb;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  transition: 200ms ease;
+  z-index: 999999999;
+}
+.success-message h4 {
+  font-size: 1.1rem;
+  color: #121212;
+  font-weight: 400;
+}
+.success-message img {
+  width: 30px;
+}
+.success-message.active {
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -112,6 +284,7 @@ body .search-image-container .search-input-wrapper .search-btn i {
   font-size: 1.3rem;
   color: #a8a8a8;
   transition: 300ms ease;
+  z-index: 0;
 }
 body .search-image-container .search-input-wrapper .clear-input-btn:hover i,
 body .search-image-container .search-input-wrapper .search-btn:hover i {
@@ -378,8 +551,8 @@ body.height {
   height: 42px;
 }
 .lightbox-container .lightbox-wrapper .lightbox-header .right-side button img {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 .lightbox-container .lightbox-wrapper .lightbox-header .right-side button:hover {
   background-color: #9b80ff;
