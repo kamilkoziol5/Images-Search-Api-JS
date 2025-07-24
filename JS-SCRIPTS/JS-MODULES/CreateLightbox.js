@@ -33,6 +33,7 @@ export function createLightbox(name, src) {
   `;
 
 	body.appendChild(lightbox);
+	document.documentElement.style.overflow = 'hidden'; // html
 
 	setTimeout(() => {
 		lightbox.classList.add('shown');
@@ -45,6 +46,7 @@ export function createLightbox(name, src) {
 		.addEventListener('click', () => {
 			lightbox.classList.remove('shown');
 			body.classList.add('height');
+			document.documentElement.style.overflow = '';
 
 			setTimeout(() => {
 				lightbox.remove();
@@ -65,7 +67,7 @@ export function createLightbox(name, src) {
 			const width = img.naturalWidth;
 			const height = img.naturalHeight;
 
-			createImageResizer(src, width, height); 
+			createImageResizer(src, width, height);
 		};
 	});
 }
