@@ -51,7 +51,8 @@
 .container .upload-box img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .container .content .row-sizes {
   display: flex;
@@ -259,6 +260,11 @@ body .search-image-container .search-input-wrapper input {
   color: #ebebeb;
   transition: 300ms ease;
   color: #ebebeb;
+  border-radius: 0;
+}
+body .search-image-container .search-input-wrapper input::-moz-placeholder {
+  font-weight: 400;
+  color: #a8a8a8;
 }
 body .search-image-container .search-input-wrapper input::placeholder {
   font-weight: 400;
@@ -384,7 +390,9 @@ body .display-image-container .no-photos-container {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 body .display-image-container .no-photos-container h3 {
   padding: 1.5rem;
@@ -517,7 +525,8 @@ body.height {
   top: 0;
   left: 0;
   background-color: rgba(18, 18, 18, 0.3098039216);
-  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -597,7 +606,8 @@ body.height {
 .lightbox-container .lightbox-wrapper .lightbox-image .img img {
   height: 100%;
   width: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .lightbox-container.shown .lightbox-wrapper {
   opacity: 1;
@@ -712,6 +722,4 @@ body.height {
     padding: 8px;
     font-size: 0.9rem;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
