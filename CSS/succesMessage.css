@@ -1,4 +1,5 @@
-.success-message {
+@charset "UTF-8";
+✅ .success-message {
   position: fixed;
   bottom: 1rem;
   left: 50%;
@@ -16,14 +17,14 @@
   transition: 200ms ease;
   z-index: 999999999;
 }
-.success-message h4 {
+✅ .success-message h4 {
   font-size: 1.1rem;
   color: #121212;
   font-weight: 400;
 }
-.success-message img {
+✅ .success-message img {
   width: 30px;
 }
-.success-message.active {
+✅ .success-message.active {
   transform: translateX(-50%) translateY(0) scale(1);
 }/*# sourceMappingURL=succesMessage.css.map */

@@ -1,6 +1,6 @@
-@import 'variables';
+@use 'variables' as *;
 
-.success-message {
+✅ .success-message {
 	position: fixed;
 	bottom: 1rem;
 	left: 50%;

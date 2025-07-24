@@ -1,6 +1,6 @@
-@import 'variables';
-@import 'imageResizer';
-@import 'succesMessage';
+@use 'variables' as *;
+@use 'imageResizer';
+@use 'succesMessage';
 
 * {
 	margin: 0;
