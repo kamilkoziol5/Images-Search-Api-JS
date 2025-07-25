@@ -33,7 +33,7 @@ export function createLightbox(name, src) {
   `;
 
 	body.appendChild(lightbox);
-	document.documentElement.style.overflow = 'hidden'; // html
+	document.documentElement.classList.remove('no-scroll');
 
 	setTimeout(() => {
 		lightbox.classList.add('shown');
@@ -46,7 +46,7 @@ export function createLightbox(name, src) {
 		.addEventListener('click', () => {
 			lightbox.classList.remove('shown');
 			body.classList.add('height');
-			document.documentElement.style.overflow = '';
+			document.documentElement.classList.add('no-scroll');
 
 			setTimeout(() => {
 				lightbox.remove();
